@@ -6,15 +6,19 @@
     "projection": {"type": "equalEarth"},
     "layer": [
       {
+        "data": {"sphere": true},
+        "mark": {"type": "geoshape", "fill": "#a6cee3", "stroke": null}
+      },
+      {
         "data": {
-          "url": "data/WorldMapWithGraticules.topojson",
+          "url": "data/ne_110m (1).topojson",
           "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
         },
         "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
       },
       {
         "data": {
-          "url": "data/WorldMapWithGraticules.topojson",
+          "url": "data/ne_110m (1).topojson",
           "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
         },
         "mark": {"type": "geoshape", "fill": null, "stroke": "#777", "strokeWidth": 0.5}
