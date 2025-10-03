@@ -100,6 +100,53 @@
           {"field": "gdp", "type": "quantitative", "format": ".2s", "title": "GDP (USD)"}
         ]
       }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "country", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['country'] == 'United States' || datum['country'] == 'Spain' || datum['country'] == 'France' || datum['country'] == 'Italy' || datum['country'] == 'China' || datum['country'] == 'Germany' || datum['country'] == 'United Kingdom'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "country", "type": "nominal", "title": "Country"},
+          {"field": "year", "type": "ordinal", "title": "Year"},
+          {"field": "tourism_receipts", "type": "quantitative", "format": ",", "title": "Tourism Receipts (USD)"},
+          {"field": "tourism_arrivals", "type": "quantitative", "format": ",", "title": "Tourism Arrivals"},
+          {"field": "selected_factor", "type": "quantitative", "format": ".2f", "title": "Selected Factor"},
+          {"field": "gdp", "type": "quantitative", "format": ".2s", "title": "GDP (USD)"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": -10,
+        "dy": -10,
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "color": "#666"
+      },
+      "data": {"values": [{"annotation": "Higher GDP countries tend to have higher tourism receipts"}]},
+      "encoding": {
+        "text": {"field": "annotation", "type": "nominal"},
+        "x": {"value": 580},
+        "y": {"value": 430}
+      }
     }
   ]
 }
